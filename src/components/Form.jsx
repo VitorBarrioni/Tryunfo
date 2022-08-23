@@ -21,15 +21,16 @@ export default class Form extends Component {
           <input
             type="text"
             data-testid="name-input"
+            name="cardName"
             value={ cardName }
             onChange={ onInputChange }
           />
         </label>
         <label>
           Descrição:
-          <textarea 
+          <textarea
             type="text"
-            name=""
+            name="cardDescription"
             id=""
             cols="30"
             rows="10"
@@ -41,6 +42,7 @@ export default class Form extends Component {
         <label>
           attr1
           <input
+            name="cardAttr1"
             type="number"
             data-testid="attr1-input"
             value={ cardAttr1 }
@@ -50,6 +52,7 @@ export default class Form extends Component {
         <label>
           attr2
           <input
+            name="cardAttr2"
             type="number"
             data-testid="attr2-input"
             value={ cardAttr2 }
@@ -59,6 +62,7 @@ export default class Form extends Component {
         <label>
           attr3
           <input
+            name="cardAttr3"
             type="number"
             data-testid="attr3-input"
             value={ cardAttr3 }
@@ -68,6 +72,7 @@ export default class Form extends Component {
         <label>
           link imagem:
           <input
+            name="cardImage"
             type="text"
             data-testid="image-input"
             value={ cardImage }
@@ -78,7 +83,7 @@ export default class Form extends Component {
           raridade:
           <select
             data-testid="rare-input"
-            name=""
+            name="cardRare"
             id=""
             onChange={ onInputChange }
             value={ cardRare }
@@ -92,7 +97,6 @@ export default class Form extends Component {
           Super Trunfo
           <input
             type="checkbox"
-            name=""
             id=""
             data-testid="trunfo-input"
             checked={ cardTrunfo }
