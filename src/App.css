@@ -1,0 +1,51 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+    color: purple
+}
+body{
+    background-color: white
+}
+.fullScr{
+    display: flex;
+    border: 3px solid black;
+    height: 100vh;
+    justify-content: center;
+}
+.cardCreator{
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  width: 600px;
+  height: fit-content;
+  text-align: left;
+  border: solid 3px red;
+}
+form.cardCreator>label{
+   margin: 10px;
+}
+.cardPreview{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 400px;
+  text-align: center;
+  max-height: 600px;
+  overflow: auto;
+  }
+  div.cardPreview > p{
+    padding: 0px;
+    margin: 10px;
+  }
+div.cardPreview > img{
+    width: 150px;
+}
+.previewName{
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+.previewwImg{
+    display: flex;
+    justify-content: center;
+}
