@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 export default class Form extends Component {
   render() {
-    const { cardName,
+    const {
+      cardName,
       cardDescription,
       cardAttr1,
       cardAttr2,
@@ -14,7 +15,8 @@ export default class Form extends Component {
       hasTrunfo,
       isSaveButtonDisabled,
       onInputChange,
-      onSaveButtonClick } = this.props;
+      onSaveButtonClick,
+    } = this.props;
     return (
       <form className="cardCreator">
         <label htmlFor="cardName">
@@ -91,32 +93,35 @@ export default class Form extends Component {
             <option value="muito raro">muito raro</option>
           </select>
         </label>
-        {
-          hasTrunfo ? 'Você já tem um Super Trunfo em seu baralho'
-            : <label htmlFor="check">
-              Super Trunfo
-              <input
-                type="checkbox"
-                id="check"
-                name="cardTrunfo"
-                data-testid="trunfo-input"
-                checked={ cardTrunfo }
-                onChange={ onInputChange }
-              />
-            </label>
-        }
+        {hasTrunfo ? (
+          'Você já tem um Super Trunfo em seu baralho'
+        ) : (
+          <label htmlFor="check">
+            Super Trunfo
+            <input
+              type="checkbox"
+              id="check"
+              name="cardTrunfo"
+              data-testid="trunfo-input"
+              checked={ cardTrunfo }
+              onChange={ onInputChange }
+            />
+          </label>
+        )}
         <button
           type="button"
           data-testid="save-button"
           disabled={ isSaveButtonDisabled }
-          onClick={ () => onSaveButtonClick({ cardName,
+          onClick={ () => onSaveButtonClick({
+            cardName,
             cardDescription,
             cardAttr1,
             cardAttr2,
             cardAttr3,
             cardImage,
             cardRare,
-            cardTrunfo }) }
+            cardTrunfo,
+          }) }
         >
           Salvar
         </button>
@@ -128,9 +133,9 @@ export default class Form extends Component {
 Form.propTypes = {
   cardName: PropTypes.string.isRequired,
   cardDescription: PropTypes.string.isRequired,
-  //cardAttr1: PropTypes.number.isRequired,
-  //cardAttr2: PropTypes.number.isRequired,
-  //cardAttr3: PropTypes.number.isRequired,
+  cardAttr1: PropTypes.string.isRequired,
+  cardAttr2: PropTypes.string.isRequired,
+  cardAttr3: PropTypes.string.isRequired,
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
